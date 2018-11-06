@@ -6,6 +6,6 @@ describe Nutricion do
   end
 
   describe Etiqueta do
-    
+    et1=Etiqueta.new('arroz',45, 50,200,150,300,30)
   end
 end
