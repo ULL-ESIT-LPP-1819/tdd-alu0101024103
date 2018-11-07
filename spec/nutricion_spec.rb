@@ -16,9 +16,13 @@ end
     end
 
 
-        it " Se almacena correctamente las grasas " do
-         expect(@et1.get_grasa).to eq(45)
-         end
+      it " Se almacena correctamente las grasas " do
+       expect(@et1.get_grasa).to eq(45)
+      end
+
+      it " Se almacena correctamente las grasas  saturadas" do
+       expect(@et1.get_grasa_sat).to eq(50)
+      end
 
 
   end
