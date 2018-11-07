@@ -25,4 +25,8 @@ end
       @hidratos
     end
 
+    def get_azucar()
+      @azucar
+    end
+
   end

@@ -29,7 +29,7 @@ end
       end
 
       it " Se almacena correctamente el azucar" do
-       expect(@et1.get_azucar).to eq(200)
+       expect(@et1.get_azucar).to eq(150)
       end
 
   end
