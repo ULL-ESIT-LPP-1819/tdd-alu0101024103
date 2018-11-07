@@ -29,8 +29,11 @@ end
       @azucar
     end
 
-    def get_proteinas
+    def get_proteinas()
       @proteinas
     end
-    
+
+    def get_sal()
+      @sal
+    end
   end
