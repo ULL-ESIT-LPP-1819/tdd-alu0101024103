@@ -29,4 +29,8 @@ end
       @azucar
     end
 
+    def get_proteinas
+      @proteinas
+    end
+    
   end
