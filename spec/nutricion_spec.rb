@@ -28,5 +28,8 @@ end
        expect(@et1.get_hidratos).to eq(200)
       end
 
+      it " Se almacena correctamente el azucar" do
+       expect(@et1.get_azucar).to eq(200)
+      end
 
   end
