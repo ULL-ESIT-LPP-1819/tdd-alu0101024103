@@ -36,4 +36,8 @@ end
        expect(@et1.get_proteinas).to eq(300)
       end
 
+      it " Se almacena correctamente la sal" do
+       expect(@et1.get_sal).to eq(30)
+      end
+
   end
