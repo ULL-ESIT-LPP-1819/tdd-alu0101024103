@@ -32,4 +32,8 @@ end
        expect(@et1.get_azucar).to eq(150)
       end
 
+      it " Se almacena correctamente las proteinas" do
+       expect(@et1.get_proteinas).to eq(300)
+      end
+
   end
