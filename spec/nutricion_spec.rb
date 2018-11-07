@@ -24,5 +24,9 @@ end
        expect(@et1.get_grasa_sat).to eq(50)
       end
 
+      it " Se almacena correctamente los hidratos de carbono" do
+       expect(@et1.get_hidratos).to eq(200)
+      end
+
 
   end
