@@ -17,4 +17,8 @@ end
       @grasas
     end
 
+    def get_grasa_sat()
+      @grasas_saturadas
+    end
+
   end
