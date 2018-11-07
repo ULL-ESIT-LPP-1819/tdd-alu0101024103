@@ -13,4 +13,8 @@ end
       @nombre
     end
 
+    def get_grasa()
+      @grasas
+    end
+
   end
