@@ -21,4 +21,8 @@ end
       @grasas_saturadas
     end
 
+    def get_hidratos()
+      @hidratos
+    end
+
   end
