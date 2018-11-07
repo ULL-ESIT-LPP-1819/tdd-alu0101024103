@@ -9,6 +9,8 @@ end
     @nombre,@grasas,@grasas_saturadas,@hidratos,@azucar,@proteinas,@sal = nombre, grasas, grasas_saturadas,hidratos,azucar,proteinas,sal
     end
 
-  
+    def get_nombre()
+      @nombre
+    end
 
   end
