@@ -46,7 +46,7 @@ end
       sal_kj=@sal * 17
       hidratos_kj= @hidratos * 4
 
-       val_kj = grasas_kj + proteinas_kj + sal_kj + hidratos_kj
+       @@val_kj = grasas_kj + proteinas_kj + sal_kj + hidratos_kj
 
     end
 
@@ -57,7 +57,7 @@ end
       sal_kcal=@sal * 6
       hidratos_kcal= @hidratos * 4
 
-      val_kcal = grasas_kcal + proteinas_kcal + sal_kcal + hidratos_kcal
+      @@val_kcal = grasas_kcal + proteinas_kcal + sal_kcal + hidratos_kcal
 
     end
 

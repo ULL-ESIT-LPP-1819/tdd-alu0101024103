@@ -48,4 +48,36 @@ end
         expect(@et1.get_val_en_kj).to eq(8075)
       end
 
+      it "ingesta de referencia azucar"do
+        expect(@et1.azucar_ir).to eq(1.6)
+      end
+
+      it "ingesta de referencia proteinas"do
+      expect(@et1.proteinas_ir).to eq(6)
+      end
+
+      it "ingesta de referencia sal"do
+      expect(@et1.sal_ir).to eq(5)
+      end
+
+      it "ingesta de referencia grasas"do
+      expect(@et1.grasas_ir).to eq(0.64)
+      end
+
+      it "ingesta de referencia grasas_sat_ir"do
+      expect(@et1.grasas_sat_ir).to eq(2.5)
+      end
+
+      it "ingesta de referencia val_en_kcal"do
+      expect(@et1.val_kcal_ir).to eq(1.29)
+      end
+
+      it "ingesta de referencia val_en_kj"do
+      expect(@et1.val_kj_ir).to eq(0.96)
+      end
+
+      it "ingesta de referencia hidratos"do
+      expect(@et1.hidratos_ir).to eq(0.76)
+      end
+
   end
