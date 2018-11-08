@@ -40,4 +40,8 @@ end
        expect(@et1.get_sal).to eq(30)
       end
 
+      it "método de valor energético" do
+        expect(@et1.get_valor_energetico).to eq(500)
+      end
+
   end
