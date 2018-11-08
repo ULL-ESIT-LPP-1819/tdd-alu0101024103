@@ -8,7 +8,7 @@ end
 
   describe Etiqueta do
     before :each do
-    @et1=Etiqueta.new('arroz',45, 50,200,150,300,30)
+    @et1=Etiqueta.new('arroz',45.00, 50.00,200.00,150.00,300.00,30.00)
   end
 
     it " Se almacena correctamente el nombre " do
@@ -49,7 +49,7 @@ end
       end
 
       it "ingesta de referencia azucar"do
-        expect(@et1.azucar_ir).to eq(1.6)
+        expect(@et1.azucar_ir).to eq(1.6666666666666667)
       end
 
       it "ingesta de referencia proteinas"do
@@ -61,7 +61,7 @@ end
       end
 
       it "ingesta de referencia grasas"do
-      expect(@et1.grasas_ir).to eq(0.64)
+      expect(@et1.grasas_ir).to eq(0.6428571428571429)
       end
 
       it "ingesta de referencia grasas_sat_ir"do
@@ -69,15 +69,15 @@ end
       end
 
       it "ingesta de referencia val_en_kcal"do
-      expect(@et1.val_kcal_ir).to eq(1.29)
+      expect(@et1.ener_kcal_ir).to eq(1.2925)
       end
 
       it "ingesta de referencia val_en_kj"do
-      expect(@et1.val_kj_ir).to eq(0.96)
+      expect(@et1.ener_kj_ir).to eq(0.9613095238095238)
       end
 
       it "ingesta de referencia hidratos"do
-      expect(@et1.hidratos_ir).to eq(0.76)
+      expect(@et1.hidratos_ir).to eq( 0.7692307692307693)
       end
 
   end

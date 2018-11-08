@@ -61,4 +61,37 @@ end
 
     end
 
+    def azucar_ir()
+      a_ir= @azucar / 90
+      end
+
+    def proteinas_ir()
+       pr_ir= @proteinas/50
+       end
+
+    def sal_ir()
+      s_ir= @sal/6
+      end
+
+    def hidratos_ir()
+      h_ir= @hidratos/260
+      end
+
+      def ener_kcal_ir()
+        val_kcal_ir=@@val_kcal/2000
+        end
+
+      def ener_kj_ir()
+       val_kj_ir= @@val_kj/8400
+       end
+
+       def grasas_ir()
+        grasita_ir=@grasas/70
+        end
+
+      def grasas_sat_ir()
+      gras_sat_ir=@grasas_saturadas/20
+      end
+
+
   end
