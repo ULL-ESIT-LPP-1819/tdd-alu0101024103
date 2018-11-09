@@ -1,66 +1,35 @@
-def formato_etiqueta
-puts "---------------------------------------------------------------------------------------------------------"
-puts "                                       Etiqueta"
-                                         puts get_nombre
-puts "---------------------------------------------------------------------------------------------------------"
-puts "                  |   Por 100 g |      IR       |     Por porcion de x g   |       IR por porcion       |"
-puts "---------------------------------------------------------------------------------------------------------"
-puts                      get_val_en_kj
-puts " Valor energetico |              |              |                           |                           |"
-puts                     get_val_en_kcal
-puts "---------------------------------------------------------------------------------------------------------"
-puts "  Grasa           |              |              |                           |                           |"
-puts                      get_grasa
-puts "---------------------------------------------------------------------------------------------------------"
-puts " Grasas saturadas |              |              |                           |                           |"
-puts                      get_grasa_sat
-puts "---------------------------------------------------------------------------------------------------------"
-puts " Hidatos          |              |              |                           |                           |"
-puts                      get_hidratos
-puts "---------------------------------------------------------------------------------------------------------"
-puts " Azúcares          |              |              |                           |                           |"
-puts                      get_azucar
-puts "---------------------------------------------------------------------------------------------------------"
-puts " Proteinas         |              |              |                           |                           |"
-puts                      get_proteinas
-puts "---------------------------------------------------------------------------------------------------------"
-puts " Sal               |              |              |                           |                           |"
-puts                      get_sal
-puts "---------------------------------------------------------------------------------------------------------"
+def get_grasa_por(x)
+  (@grasas * x)/100
+end
+
+def get_grasa_sat_por(x)
+  (@grasas_saturadas * x)/100
+end
+
+def get_hidratos_por(x)
+  (@hidratos * x)/100
+end
+
+def get_azucar_por(x)
+  (@azucar * x) /100
+end
+
+def get_proteinas_por(x)
+  (@proteinas * x) /100
+end
+
+def get_sal(x)
+  (@sal * x) /100
 end
 
 
-  Etiqueta.new('arroz',45, 50,200,150,300,30).formato_etiqueta
+def get_val_en_kj_por(x)
 
+   (@@val_kj * x )/100
 
-  def azucar_ir()
-    a_ir= @azucar / 90
-    end
+end
 
-  def proteinas_ir()
-     pr_ir= @proteinas/50
-     end
+def get_val_en_kcal_por(x)
 
-  def sal _ir()
-    s_ir= @sal/6
-    end
-
-  def hidratos_ir()
-    h_ir= @hidratos/260
-    end
-
-    def ener_kcal_ir()
-      val_kcal_ir=@@val_kcal/2000
-      end
-
-    def ener_kj_ir()
-     val_kj_ir= @@val_kj/8400
-     end
-
-     def grasas_ir()
-      grasita_ir=@grasas/70
-      end
-
-      def grasas_sat_ir()
-      gras_sat_ir=@grasas_saturadas/20
-      end
+  (@@val_kcal * x) /100
+end
