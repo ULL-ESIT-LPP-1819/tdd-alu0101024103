@@ -97,6 +97,41 @@ end
         (@grasas * x)/100
       end
 
+      def get_grasa_sat_por(x)
+        (@grasas_saturadas * x)/100
+      end
+
+      def get_hidratos_por(x)
+        (@hidratos * x)/100
+      end
+
+      def get_azucar_por(x)
+        (@azucar * x) /100
+      end
+
+      def get_proteinas_por(x)
+        (@proteinas * x) /100
+      end
+
+      def get_sal_por(x)
+        (@sal * x) /100
+      end
+
+
+      def get_val_en_kj_por(x)
+
+         (@@val_kj * x )/100
+
+      end
+
+      def get_val_en_kcal_por(x)
+
+        (@@val_kcal * x) /100
+      end
+
+
+
+
 
       def formato_etiqueta()
       puts "---------------------------------------------------------------------------------------------------------"

@@ -97,7 +97,7 @@ end
       end
 
       it "porcion val_energetico_kcal  gramos" do
-        expect(@et1.get_val_en_kcal(30)).to eq(364.2)
+        expect(@et1.get_val_en_kcal_por(30)).to eq(364.2)
       end
 
       it "porcion azucar x gramos" do
@@ -109,7 +109,7 @@ end
       end
 
       it "porcion val_energetico_kj x gramos" do
-        expect(@et1.get_val_en_kj(30)).to eq(746.4)
+        expect(@et1.get_val_en_kj_por(30)).to eq(746.4)
       end
 
 
