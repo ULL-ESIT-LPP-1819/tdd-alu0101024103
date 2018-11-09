@@ -129,9 +129,37 @@ end
         (@@val_kcal * x) /100.00
       end
 
+      def azucar_ir_por(x)
+        (  azucar_ir() *x )/100
+        end
 
+      def proteinas_ir_por(x)
+         (proteinas_ir()* x)/100
+         end
 
+      def sal_ir_por(x)
+        (sal_ir()* x)/100
+        end
 
+      def hidratos_ir_por(x)
+      ( hidratos_ir()*x )/100
+        end
+
+        def ener_kcal_ir_por(x)
+          (ener_kcal_ir * x)/100
+          end
+
+         def ener_kj_ir_por(x)
+         (ener_kj_ir()*x)/100
+         end
+
+          def grasas_ir_por(x)
+          (grasas_ir*x)/100
+          end
+
+        def grasas_sat_ir_por(x)
+        (grasas_sat_ir*x)/100
+        end
 
       def formato_etiqueta()
       puts "---------------------------------------------------------------------------------------------------------"

@@ -113,7 +113,7 @@ end
       end
 
       it "ingesta por porcion de grasas"do
-        expect(@et1.grasas_ir_por(30)).to eq(12.857142)
+        expect(@et1.grasas_ir_por(30)).to eq(12.857142857142856)
       end
 
       it "ingesta por porcion de grasas sat"do
@@ -125,23 +125,23 @@ end
       end
 
       it "ingesta por porcion de sal"do
-        expect(@et1.sal_ir_por(30)).to eq(19.999999)
+        expect(@et1.sal_ir_por(30)).to eq(19.999999999999996)
       end
 
       it "ingesta por porcion de azucar"do
-        expect(@et1.azucar_ir_por(30)).to eq(23.3333)
+        expect(@et1.azucar_ir_por(30)).to eq( 23.333333333333336)
       end
 
       it "ingesta por porcion de hidratos"do
-        expect(@et1.hidratos_ir_por(30)).to eq(23.0769)
+        expect(@et1.hidratos_ir_por(30)).to eq(23.07692307692308)
       end
 
       it "ingesta por porcion de val ener por kcal"do
-        expect(@et1.ener_kcal_ir_por(30)).to eq(18.20999999)
+        expect(@et1.ener_kcal_ir_por(30)).to eq(18.209999999999997)
       end
 
       it "ingesta por porcion de ener por kj"do
-        expect(@et1.ener_kj_ir_por(30)).to eq(8.7)
+        expect(@et1.ener_kj_ir_por(30)).to eq(8.885714285714286)
       end
 
 
