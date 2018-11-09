@@ -94,39 +94,39 @@ end
       end
 
       def get_grasa_por(x)
-        (@grasas * x)/100
+        (@grasas * x)/100.00
       end
 
       def get_grasa_sat_por(x)
-        (@grasas_saturadas * x)/100
+        (@grasas_saturadas * x)/100.00
       end
 
       def get_hidratos_por(x)
-        (@hidratos * x)/100
+        (@hidratos * x)/100.00
       end
 
       def get_azucar_por(x)
-        (@azucar * x) /100
+        (@azucar * x) /100.00
       end
 
       def get_proteinas_por(x)
-        (@proteinas * x) /100
+        (@proteinas * x) /100.00
       end
 
       def get_sal_por(x)
-        (@sal * x) /100
+        (@sal * x) /100.00
       end
 
 
       def get_val_en_kj_por(x)
 
-         (@@val_kj * x )/100
+         (@@val_kj * x )/100.00
 
       end
 
       def get_val_en_kcal_por(x)
 
-        (@@val_kcal * x) /100
+        (@@val_kcal * x) /100.00
       end
 
 
@@ -138,29 +138,30 @@ end
       puts "                                       Etiqueta"
       puts get_nombre
       puts "---------------------------------------------------------------------------------------------------------"
-      puts "                  |   Por 100 g |      IR       |     Por porcion de x g   |       IR por porcion       |"
+      puts "                  |   Por 100 g |      IR       |     Por porcion de      g|       IR por porcion       |"
+      printf" %70d\n",30
       puts "---------------------------------------------------------------------------------------------------------"
       puts
       puts " Valor energetico |              |              |                           |                           |"
-    printf "%25d,%d %8d,%6d\n" ,get_val_en_kcal,get_val_en_kj,ener_kcal_ir,ener_kj_ir
+    printf "%25d,%d %8d,%6d%18f%12f\n" ,get_val_en_kcal,get_val_en_kj,ener_kcal_ir,ener_kj_ir,get_val_en_kcal_por(30),get_val_en_kj_por(30)
       puts "---------------------------------------------------------------------------------------------------------"
       puts "  Grasa           |              |              |                           |                           |"
-      printf "%25d%20f \n" ,get_grasa,grasas_ir
+      printf "%25d%20f%20f \n" ,get_grasa,grasas_ir,get_grasa_por(30)
       puts "---------------------------------------------------------------------------------------------------------"
       puts " Grasas saturadas |              |              |                           |                           |"
-      printf "%25d%20f \n" ,get_grasa_sat,grasas_sat_ir
+      printf "%25d%20f%20f \n" ,get_grasa_sat,grasas_sat_ir,get_grasa_sat_por(30)
       puts "---------------------------------------------------------------------------------------------------------"
       puts " Hidatos          |              |              |                           |                           |"
-      printf "%25d%20f \n" ,get_hidratos,hidratos_ir
+      printf "%25d%20f%20f \n" ,get_hidratos,hidratos_ir,get_hidratos_por(30)
       puts "---------------------------------------------------------------------------------------------------------"
       puts " Azúcares          |              |              |                           |                           |"
-      printf "%25d%20f \n" ,get_azucar,azucar_ir
+      printf "%25d%20f%20f \n" ,get_azucar,azucar_ir,get_azucar_por(30)
       puts "---------------------------------------------------------------------------------------------------------"
       puts " Proteinas         |              |              |                           |                           |"
-      printf "%25d%20f \n" ,get_proteinas,proteinas_ir
+      printf "%25d%20f%20f \n" ,get_proteinas,proteinas_ir,get_proteinas_por(30)
       puts "---------------------------------------------------------------------------------------------------------"
       puts " Sal               |              |              |                           |                           |"
-    printf "%25d%20f \n" ,get_sal,sal_ir
+    printf "%25d%20f%20f \n" ,get_sal,sal_ir,get_sal_por(30)
       puts "---------------------------------------------------------------------------------------------------------"
       end
 

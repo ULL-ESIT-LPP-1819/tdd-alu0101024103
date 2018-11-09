@@ -112,6 +112,40 @@ end
         expect(@et1.get_val_en_kj_por(30)).to eq(746.4)
       end
 
+      it "ingesta por porcion de grasas"do
+        expect(@et1.grasas_ir_por(30)).to eq(12.857142)
+      end
+
+      it "ingesta por porcion de grasas sat"do
+        expect(@et1.grasas_sat_ir_por(30)).to eq(15)
+      end
+
+      it "ingesta por porcion de proteinas"do
+        expect(@et1.proteinas_ir_por(30)).to eq(18)
+      end
+
+      it "ingesta por porcion de sal"do
+        expect(@et1.sal_ir_por(30)).to eq(19.999999)
+      end
+
+      it "ingesta por porcion de azucar"do
+        expect(@et1.azucar_ir_por(30)).to eq(23.3333)
+      end
+
+      it "ingesta por porcion de hidratos"do
+        expect(@et1.hidratos_ir_por(30)).to eq(23.0769)
+      end
+
+      it "ingesta por porcion de val ener por kcal"do
+        expect(@et1.ener_kcal_ir_por(30)).to eq(18.20999999)
+      end
+
+      it "ingesta por porcion de ener por kj"do
+        expect(@et1.ener_kj_ir_por(30)).to eq(8.7)
+      end
+
+
+
 
 
   end
