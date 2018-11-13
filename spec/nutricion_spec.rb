@@ -11,10 +11,9 @@ end
     @et1=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00)
   end
 
-    it " Se almacena correctamente el nombre " do
-      expect(@et1.get_nombre).to eq('arroz')
-    end
-
+      it " Se almacena correctamente el nombre " do
+        expect(@et1.get_nombre).to eq('arroz')
+      end
 
       it " Se almacena correctamente las grasas " do
        expect(@et1.get_grasa).to eq(30.00)
@@ -144,9 +143,12 @@ end
         expect(@et1.ener_kj_ir_por(30)).to eq(8.885714285714286)
       end
 
+  end
 
 
+  describe Listas do
 
+    
 
   end
 
