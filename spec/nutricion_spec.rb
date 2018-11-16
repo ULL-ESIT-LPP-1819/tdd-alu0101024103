@@ -162,9 +162,17 @@ describe Listas do
 
     end
 
-        it "prueba de insertar una sola etiqueta y para el to s" do
+        it "prueba de insertar una sola etiqueta " do
           expect(@primera.insert(@et2)).to eq(@et2)
-        expect(@primera.to_s).to eq('papas,')
+        end
+
+        it " prueba del insert y del to_s para 5 etiquetas " do
+          expect(@primera.insert(@et2)).to eq(@et2)
+          expect(@primera.insert(@et4)).to eq(@et4)
+          expect(@primera.insert(@et3)).to eq(@et3)
+          expect(@primera.insert(@et11)).to eq(@et11)
+          expect(@primera.insert(@et5)).to eq(@et5)
+          expect(@primera.to_s).to eq('papas,carne,melon,arroz,pescado,' )
         end
 
 
