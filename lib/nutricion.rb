@@ -1,5 +1,6 @@
 require "nutricion/version"
 require "nutricion/codigo"
+require "nutricion/lista"
 
 
 

@@ -189,9 +189,10 @@ class Etiqueta
     puts " Sal               |              |              |                           |                           |"
   printf "%25d%20f%20f%25f\n" ,get_sal,sal_ir,get_sal_por(30),sal_ir_por(30)
     puts "---------------------------------------------------------------------------------------------------------"
+
     end
-end
 
-class Listas
-
+    def to_s
+      @nombre
+    end
 end

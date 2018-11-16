@@ -8,7 +8,7 @@ end
 
   describe Etiqueta do
     before :each do
-    @et1=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00)
+      @et1=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00)
   end
 
       it " Se almacena correctamente el nombre " do
@@ -76,7 +76,7 @@ end
       end
 
       it "ingesta de referencia hidratos"do
-      expect(@et1.hidratos_ir).to eq( 76.92307692307693)
+        expect(@et1.hidratos_ir).to eq( 76.92307692307693)
       end
 
       it "porcion grasa x gramos" do
@@ -143,13 +143,29 @@ end
         expect(@et1.ener_kj_ir_por(30)).to eq(8.885714285714286)
       end
 
-  end
-
-
-  describe Listas do
-
-    
+      it "to_s"do
+        expect(@et1.to_s).to eq("arroz")
+      end
 
   end
 
-  Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00).formato_etiqueta
+
+describe Listas do
+    before :each do
+      @primera = Listas.new(nil,nil)
+
+      @et11=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,9.00)
+      @et2=Etiqueta.new('papas',25.00, 15.00,50.00,60.00,10.00,6.00)
+      @et3=Etiqueta.new('melon',500.00, 7.00,80.00,12.00,8.00,8.00)
+      @et4=Etiqueta.new('carne',15.00, 16.00,70.00,34.00,28.00,7.00)
+      @et5=Etiqueta.new('pescado',12.00, 20.00,50.00,40.00,13.00,10.00)
+
+    end
+
+        it "prueba de insertar una sola etiqueta" do
+          expect(@primera.insert(@et2)).to eq(@et2)
+        
+        end
+
+
+  end
