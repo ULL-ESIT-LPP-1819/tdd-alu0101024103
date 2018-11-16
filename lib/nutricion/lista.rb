@@ -38,4 +38,15 @@ class Listas
       @size+=1;
     node_ins[:value]
     end
+
+    def to_s
+      ptr=@head
+      a = String.new
+      while ptr != nil do
+        a <<  ptr [:value].to_s << ','
+        ptr=ptr[:get_next]
+      end
+
+      a
+    end
 end
