@@ -162,6 +162,7 @@ describe Listas do
 
     end
 
+
         it "prueba de insertar una sola etiqueta " do
           expect(@primera.insert(@et2)).to eq(@et2)
         end
@@ -175,5 +176,17 @@ describe Listas do
           expect(@primera.to_s).to eq('papas,carne,melon,arroz,pescado,' )
         end
 
+        it "prueba para comprobar la de menor sal " do
+          expect(@primera.insert(@et2)).to eq(@et2)
+          expect(@primera.insert(@et4)).to eq(@et4)
+          expect(@primera.insert(@et3)).to eq(@et3)
+          expect(@primera.insert(@et11)).to eq(@et11)
+          expect(@primera.insert(@et5)).to eq(@et5)
+          expect(@primera.head[:value]).to eq(@et2)
+        end
+  end
+
+
+describe Person do
 
   end

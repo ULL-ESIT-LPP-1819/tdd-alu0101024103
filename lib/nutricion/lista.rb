@@ -1,11 +1,13 @@
 Nodo=Struct.new(:value, :get_next, :get_prev)
 
 class Listas
+attr_reader :head
 
   def initialize(head,tail)
       @head,@tail=head,tail
       @size=0
   end
+
 
   def insert(other)
     if @size==0
@@ -16,6 +18,7 @@ class Listas
         node_ins=Nodo.new(other,nil,nil)
         node_mas=@head
         node_menos=nil
+
         while node_mas != nil do
 
           if node_ins[:value].get_sal()>=node_mas[:value].get_sal()
@@ -24,6 +27,12 @@ class Listas
           end
         end
 
+        if node_mas == @head
+          @head=node_ins
+
+      elsif node_mas ==nil
+        @tail=node_ins
+      end
         node_ins[:get_prev]=node_menos
         node_ins[:get_next]=node_mas
 
@@ -38,6 +47,8 @@ class Listas
       @size+=1;
     node_ins[:value]
     end
+
+
 
     def to_s
       ptr=@head
