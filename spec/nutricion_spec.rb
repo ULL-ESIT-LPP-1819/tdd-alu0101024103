@@ -193,5 +193,10 @@ describe Person do
 
   describe Paciente do
 
-    
+
+  end
+
+
+  describe Sobrepeso do
+
   end
