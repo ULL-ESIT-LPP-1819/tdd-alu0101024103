@@ -6,3 +6,6 @@ end
 
 class Paciente
 end
+
+class Sobrepeso
+end 
