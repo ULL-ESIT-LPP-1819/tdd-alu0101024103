@@ -190,3 +190,8 @@ describe Listas do
 describe Person do
 
   end
+
+  describe Paciente do
+
+    
+  end
