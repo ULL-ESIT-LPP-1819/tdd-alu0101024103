@@ -199,6 +199,34 @@ end
       expect(@persona1.dni).to eq(87987879)
     end
 
+    it "prueba de is_a y kind_of de una persona"do
+        expect(@persona1.is_a?Sobrepeso).to eq(false)
+        expect(@persona1.is_a?Paciente).to eq(false)
+        expect(@persona1.is_a?Person).to eq(true)
+        expect(@persona1.is_a?Object).to eq(true)
+        expect(@persona1.is_a?BasicObject).to eq(true)
+
+        expect(@personas1.kind_of?Sobrepeso).to eq(false)
+        expect(@persona1.kind_of?Paciente).to eq(false)
+        expect(@persona1.kind_of?Person).to eq(true)
+        expect(@persona1.kind_of?Object).to eq(true)
+        expect(@persona1.kind_of?BasicObject).to eq(true)
+
+      end
+
+
+          it "prueba de instance_of de una persona"do
+              expect(@persona1.instance_of?Sobrepeso).to eq(false)
+              expect(@persona1.instance_of?Paciente).to eq(false)
+              expect(@persona1.instance_of?Person).to eq(true)
+              expect(@persona1.instance_of?Object).to eq(false)
+              expect(@persona1.instance_of?BasicObject).to eq(false)
+          end
+
+          it "prueba de .class de una persona" do
+            expect(@persona1.class). to eq (Person)
+
+          end
 
       end
 
@@ -211,6 +239,31 @@ end
             expect(@paciente1.horario).to eq("Dos y cuarto")
             expect(@paciente1.telefono).to eq(922624356)
             expect(@paciente1.consulta).to eq("obeso")
+        end
+        it "prueba de is_a y kind_of de un Paciente"do
+            expect(@paciente1.is_a?Sobrepeso).to eq(false)
+            expect(@paciente1.is_a?Paciente).to eq(true)
+            expect(@paciente1.is_a?Person).to eq(true)
+            expect(@paciente1.is_a?Object).to eq(true)
+            expect(@paceinte1.is_a?BasicObject).to eq(true)
+
+            expect(@paciente1.kind_of?Sobrepeso).to eq(false)
+            expect(@paciente1.kind_of?Paciente).to eq(true)
+            expect(@paciente1.kind_of?Person).to eq(true)
+            expect(@paciente1.kind_of?Object).to eq(true)
+            expect(@paceinte1.kind_of?BasicObject).to eq(true)
+        end
+
+        it "prueba de instance_of de un Paciente"do
+            expect(@paciente1.instance_of?Sobrepeso).to eq(false)
+            expect(@paciente1.instance_of?Paciente).to eq(true)
+            expect(@paciente1.instance_of?Person).to eq(false)
+            expect(@paciente1.instance_of?Object).to eq(false)
+            expect(@paceinte1.instance_of?BasicObject).to eq(false)
+        end
+
+        it "prueba de .class de un Paciente" do
+          expect(@paciente1.class). to eq (Paciente)
         end
 
       end
@@ -228,5 +281,32 @@ end
         expect(@obeso1.sexo).to eq(1)
         expect(@obeso1.imc). to eq(31.249999999999993)
       end
+
+      it "prueba de is_a y kind_of de un obeso"do
+          expect(@obeso1.is_a?Sobrepeso).to eq(true)
+          expect(@obeso1.is_a?Paciente).to eq(true)
+          expect(@obeso1.is_a?Person).to eq(true)
+          expect(@obeso1.is_a?Object).to eq(true)
+          expect(@obeso1.is_a?BasicObject).to eq(true)
+
+          expect(@obeso1.kind_of?Sobrepeso).to eq(true)
+          expect(@obeso1.kind_of?Paciente).to eq(true)
+          expect(@obeso1.kind_of?Person).to eq(true)
+          expect(@obeso1.kind_of?Object).to eq(true)
+          expect(@obeso1.kind_of?BasicObject).to eq(true)
+
+      end
+
+      it "prueba de instance_of de un obeso"do
+          expect(@obeso1.instance_of?Sobrepeso).to eq(true)
+          expect(@obeso1.instance_of?Paciente).to eq(false)
+          expect(@obeso1.instance_of?Person).to eq(false)
+          expect(@obeso1.instance_of?Object).to eq(false)
+          expect(@obeso1.instance_of?BasicObject).to eq(false)
+      end
+
+      it "prueba de .class de un obeso" do
+        expect(@obeso1.class). to eq (Sobrepeso)
+      end 
 
       end
