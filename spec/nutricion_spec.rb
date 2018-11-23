@@ -307,6 +307,6 @@ end
 
       it "prueba de .class de un obeso" do
         expect(@obeso1.class). to eq (Sobrepeso)
-      end 
+      end
 
       end
