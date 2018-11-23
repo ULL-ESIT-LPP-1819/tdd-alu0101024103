@@ -206,11 +206,13 @@ end
         expect(@persona1.is_a?Object).to eq(true)
         expect(@persona1.is_a?BasicObject).to eq(true)
 
-        expect(@personas1.kind_of?Sobrepeso).to eq(false)
+        expect(@persona1.kind_of?Sobrepeso).to eq(false)
         expect(@persona1.kind_of?Paciente).to eq(false)
         expect(@persona1.kind_of?Person).to eq(true)
         expect(@persona1.kind_of?Object).to eq(true)
         expect(@persona1.kind_of?BasicObject).to eq(true)
+
+
 
       end
 
@@ -254,6 +256,8 @@ end
             expect(@paceinte1.kind_of?BasicObject).to eq(true)
         end
 
+
+    
         it "prueba de instance_of de un Paciente"do
             expect(@paciente1.instance_of?Sobrepeso).to eq(false)
             expect(@paciente1.instance_of?Paciente).to eq(true)
@@ -295,6 +299,14 @@ end
           expect(@obeso1.kind_of?Object).to eq(true)
           expect(@obeso1.kind_of?BasicObject).to eq(true)
 
+      end
+
+      it"pureba de respond to" do
+          expect(@obeso1.respond_to?:imc).to eq(true)
+          expect(@obeso1.respond_to?:talla).to eq(true)
+          expect(@obeso1.respond_to?:peso).to eq(true)
+          expect(@obeso1.respond_to?:edad).to eq(true)
+          expect(@obeso1.respond_to?:sexo).to eq(true)
       end
 
       it "prueba de instance_of de un obeso"do

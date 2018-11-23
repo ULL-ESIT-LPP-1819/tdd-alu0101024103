@@ -7,7 +7,7 @@ class Person
   end
   def to_s()
      @nombre
-   end
+  end 
 
 end
 
