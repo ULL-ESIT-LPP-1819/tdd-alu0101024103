@@ -9,14 +9,11 @@ class Person
      @nombre
    end
 
-
-
-
 end
 
 
 
-class Paciente<Person
+class Paciente<Person #herencia
 
   attr_reader :horario,:telefono,:consulta
 
@@ -29,7 +26,7 @@ end
 
 
 
-class Sobrepeso<Paciente
+class Sobrepeso<Paciente #herencia
   attr_reader :talla,:peso,:edad,:sexo
     def initialize(talla,peso,edad,sexo,cintura,cadera,array,nombre,apellidos,dni,horario,telefono,consulta)
       @talla,@peso,@edad,@sexo,@cintura,@cadera,@array=talla,peso,edad,sexo,cintura,cadera,array
