@@ -19,12 +19,11 @@ attr_reader :head
         node_mas=@head
         node_menos=nil
 
-        while node_mas != nil do
+        while node_mas != nil && node_ins[:value].imc()>=node_mas[:value].imc() do
 
-          if node_ins[:value].get_sal()>=node_mas[:value].get_sal()
           node_menos=node_mas
           node_mas=node_mas[:get_next]
-          end
+          
         end
 
         if node_mas == @head

@@ -1,11 +1,22 @@
 
 class Person
+
+
+
+
 end
 
 
 
-class Paciente
+class Paciente<Person
+
+
 end
 
-class Sobrepeso
-end 
+
+
+class Sobrepeso<Paciente
+
+
+
+end

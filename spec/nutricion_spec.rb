@@ -5,7 +5,7 @@ describe Nutricion do
     expect(Nutricion::VERSION).not_to be nil
   end
 end
-
+=begin
   describe Etiqueta do
     before :each do
       @et1=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00)
@@ -148,55 +148,85 @@ end
       end
 
   end
+=end
 
 
-describe Listas do
+  describe Listas do
     before :each do
       @primera = Listas.new(nil,nil)
-
-      @et11=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,9.00)
-      @et2=Etiqueta.new('papas',25.00, 15.00,50.00,60.00,10.00,6.00)
-      @et3=Etiqueta.new('melon',500.00, 7.00,80.00,12.00,8.00,8.00)
-      @et4=Etiqueta.new('carne',15.00, 16.00,70.00,34.00,28.00,7.00)
-      @et5=Etiqueta.new('pescado',12.00, 20.00,50.00,40.00,13.00,10.00)
+      @array=Array[[1,2,3],[1,2,3],[1,2,3],[1,2,3]]
+      @pacienteo2=Sobrepeso.new(1.50,100,20,1,80,40,@array,"juan","Gonzales",23423428,"Dos y cuarto",922624356,"obeso")
+      @pacienteo1=Sobrepeso.new(1.60,80,20,1,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso")
+      @pacienteo3=Sobrepeso.new(1.85,163,20,1,80,40,@array,"brian","Santamaria",8978789,"Dos y cuarto",922624356,"obeso")
+      @pacienteo4=Sobrepeso.new(1.80,162,20,1,80,40,@array,"Lucas","Rodriguez",76678989,"Dos y cuarto",922624356,"obeso")
+      @pacienteo5=Sobrepeso.new(1.87,190,20,1,80,40,@array,"cristian","Perez",768768678,"Dos y cuarto",922624356,"obeso")
 
     end
 
 
-        it "prueba de insertar una sola etiqueta " do
+        it "prueba de insertar una sola persona " do
           expect(@primera.insert(@et2)).to eq(@et2)
         end
 
-        it " prueba del insert y del to_s para 5 etiquetas " do
-          expect(@primera.insert(@et2)).to eq(@et2)
-          expect(@primera.insert(@et4)).to eq(@et4)
-          expect(@primera.insert(@et3)).to eq(@et3)
-          expect(@primera.insert(@et11)).to eq(@et11)
-          expect(@primera.insert(@et5)).to eq(@et5)
-          expect(@primera.to_s).to eq('papas,carne,melon,arroz,pescado,' )
+        it " prueba del insert para 5 personas y del to_s para 5 comprobar el imc " do
+          expect(@primera.insert(@pacienteo2)).to eq(@pacienteo2)
+          expect(@primera.insert(@pacienteo1)).to eq(@pacienteo1)
+          expect(@primera.insert(@pacienteo3)).to eq(@pacienteo3)
+          expect(@primera.insert(@pacienteo4)).to eq(@pacienteo4)
+          expect(@primera.insert(@pacienteo5)).to eq(@pacienteo5)
+          expect(@primera.to_s).to eq('pedro,juan,brian,Lucas,cristian,' )
         end
 
-        it "prueba para comprobar la de menor sal " do
-          expect(@primera.insert(@et2)).to eq(@et2)
-          expect(@primera.insert(@et4)).to eq(@et4)
-          expect(@primera.insert(@et3)).to eq(@et3)
-          expect(@primera.insert(@et11)).to eq(@et11)
-          expect(@primera.insert(@et5)).to eq(@et5)
-          expect(@primera.head[:value]).to eq(@et2)
+        it "prueba para comprobar el menor imc " do
+          expect(@primera.insert(@pacienteo3)).to eq(@pacienteo3)
+          expect(@primera.insert(@pacienteo2)).to eq(@pacienteo2)
+          expect(@primera.insert(@pacienteo1)).to eq(@pacienteo1)
+          expect(@primera.insert(@pacienteo4)).to eq(@pacienteo4)
+          expect(@primera.insert(@pacienteo5)).to eq(@pacienteo5)
+          expect(@primera.head[:value]).to eq(@pacienteo1)
         end
   end
 
 
-describe Person do
+    describe Person do
+      before :each do
+    @persona1=Person.new("pedro","Marquez",87987879)
+      end
 
-  end
+      it "prueba del nombre, apellidos, y dni de la persona"do
+      expect(@persona1.nombre).to eq("pedro")
+      expect(@persona1.apellidos).to eq("Marquez")
+      expect(@persona1.dni).to eq(87987879)
+    end
 
-  describe Paciente do
+
+      end
+
+      describe Paciente do
+        before :each do
+      @paciente1=Paciente.new("pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso")
+        end
+
+        it "Prueba de horario, telefono y consulta" do
+            expect(@paciente1.horario).to eq("Dos y cuarto")
+            expect(@paciente1.telefono).to eq(922624356)
+            expect(@paciente1.consulta).to eq("obeso")
+        end
+
+      end
 
 
-  end
+      describe Sobrepeso do
+        before :each do
+          @obeso1=Sobrepeso.new(1.60,80,20,1,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso")
+        end
 
+        it "prueba para el imc,talla,peso,y edad del paciente"do
+        expect(@obeso1.talla).to eq(1.60)
+        expect(@obeso1.peso).to eq(80)
+        expect(@obeso1.edad).to eq(20)
+        expect(@obeso1.sexo).to eq(1)
+        expect(@obeso1.imc). to eq(31.249999999999993)
+      end
 
-  describe Sobrepeso do
-
-  end
+      end
