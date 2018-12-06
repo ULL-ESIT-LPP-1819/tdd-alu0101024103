@@ -364,5 +364,35 @@ end
         expect(@obeso1.class). to eq (Sobrepeso)
       end
 
+      it "pruebas del < de la información nutricional"do
+      expect(@obeso1 < @obeso2).to eq(true)
+      end
+
+      it "pruebas del > de la información nutricional"do
+      expect(@obeso1 > @obeso2).to eq(false)
+      end
+
+      it "pruebas del == de la información nutricional"do
+      expect(@obeso1 == @obeso2).to eq(false)
+      end
+
+      it "pruebas del between de la información nutricional"do
+      expect(@obeso2.between?(@obeso1,@obeso3)).to eq(true)
+      end
+
+      it "pruebas del <= de la información nutricional"do
+      expect(@obeso1 <= @obeso2).to eq(true)
+      end
+
+      it "pruebas del >= de la información nutricional"do
+      expect(@obeso1 >= @obeso1).to eq(true)
+      end
+
+      it "pruebas del <=> de la información nutricional"do
+        expect(@obeso2 <=> @obeso1).to eq(1)
+        expect(@obeso1 <=> @obeso2).to eq(-1)
+        expect(@obeso1 <=> @obeso1).to eq(0)
+      end
+
 
     end

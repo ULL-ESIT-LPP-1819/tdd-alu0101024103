@@ -28,6 +28,7 @@ end
 
 class Sobrepeso<Paciente #herencia
 
+
   attr_reader :talla,:peso,:edad,:sexo
 
     def initialize(talla,peso,edad,sexo,cintura,cadera,array,nombre,apellidos,dni,horario,telefono,consulta)
