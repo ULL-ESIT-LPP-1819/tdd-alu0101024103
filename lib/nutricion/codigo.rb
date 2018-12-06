@@ -1,15 +1,16 @@
 
 
 class Etiqueta
-
+include Comparable
 
 
   def initialize(nombre, grasas, grasas_saturadas,hidratos,azucar,proteinas,sal)
   @nombre,@grasas,@grasas_saturadas,@hidratos,@azucar,@proteinas,@sal = nombre, grasas, grasas_saturadas,hidratos,azucar,proteinas,sal
   end
 
-
-
+  def <=>(anOther)
+    get_sal()<=> anOther.get_sal()
+  end
 
   def get_nombre()
     @nombre

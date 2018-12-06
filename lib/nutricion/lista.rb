@@ -20,7 +20,7 @@ class Listas
         node_mas=@head
         node_menos=nil
 
-        while node_mas != nil && node_ins[:value]>=node_mas[:value] do
+        while node_mas != nil && node_ins[:value].imc()>=node_mas[:value].imc() do
 
           node_menos=node_mas
           node_mas=node_mas[:get_next]
