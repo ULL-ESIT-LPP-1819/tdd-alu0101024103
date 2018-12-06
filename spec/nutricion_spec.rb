@@ -224,7 +224,19 @@ end
 
 
 
-    
+        it "pruebas para el collect,select,sort,max,min de personas"do
+          expect(@primera.insert(@pacienteo4)).to eq(@pacienteo4)
+          expect(@primera.insert(@pacienteo2)).to eq(@pacienteo2)
+          expect(@primera.insert(@pacienteo1)).to eq(@pacienteo1)
+          expect(@primera.insert(@pacienteo3)).to eq(@pacienteo3)
+          expect(@primera.insert(@pacienteo5)).to eq(@pacienteo5)
+
+          expect(@primera.collect{ |paciente| paciente.imc == 31.249999999999993}).to eq([true, false, false, false, false])
+          expect(@primera.min.imc()).to eq(31.249999999999993)
+          expect(@primera.max.imc()).to eq(54.333838542709245)
+          expect(@primera.select{|persona| persona.imc == 31.249999999999993}).to eq([@pacienteo1])
+          expect(@primera.sort).to eq([@pacienteo1,@pacienteo2,@pacienteo3,@pacienteo4,@pacienteo5])
+       end
 
         it "pruebas para el collect,select,sort,max,min de etiquetas"do
           expect(@primera.insert(@et1)).to eq(@et1)
