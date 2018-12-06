@@ -15,6 +15,7 @@ end
 
 class Paciente<Person #herencia
 
+
   attr_reader :horario,:telefono,:consulta
 
   def initialize(nombre,apellidos,dni,horario,telefono,consulta)
@@ -27,8 +28,7 @@ end
 
 
 class Sobrepeso<Paciente #herencia
-
-
+  include Comparable
   attr_reader :talla,:peso,:edad,:sexo
 
     def initialize(talla,peso,edad,sexo,cintura,cadera,array,nombre,apellidos,dni,horario,telefono,consulta)
@@ -36,8 +36,10 @@ class Sobrepeso<Paciente #herencia
       super(nombre,apellidos,dni,horario,telefono,consulta)
     end
 
-
-
+    def <=> (anOther)
+        imc()<=> anOther.imc()
+    end
+  
     def imc()
       @masa = (@peso/(@talla * @talla))
     end
