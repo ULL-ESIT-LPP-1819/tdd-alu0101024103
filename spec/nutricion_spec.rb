@@ -200,7 +200,6 @@ end
       @et5=Etiqueta.new('pescado',30.00, 10.00,200.00,70.00,30.00,2.00)
     end
 
-
         it "prueba de insertar una sola persona " do
           expect(@primera.insert(@et2)).to eq(@et2)
         end
@@ -221,10 +220,25 @@ end
           expect(@primera.insert(@pacienteo3)).to eq(@pacienteo3)
           expect(@primera.insert(@pacienteo5)).to eq(@pacienteo5)
           expect(@primera.head[:value]).to eq(@pacienteo1)
-
         end
 
 
+
+    
+
+        it "pruebas para el collect,select,sort,max,min de etiquetas"do
+          expect(@primera.insert(@et1)).to eq(@et1)
+          expect(@primera.insert(@et2)).to eq(@et2)
+          expect(@primera.insert(@et3)).to eq(@et3)
+          expect(@primera.insert(@et4)).to eq(@et4)
+          expect(@primera.insert(@et5)).to eq(@et5)
+
+          expect(@primera.collect{|etiqueta| etiqueta.get_sal == 4.0 }).to eq([false, false, true, false, false])
+          expect(@primera.min.get_sal()).to eq(2.00)
+          expect(@primera.max.get_sal()).to eq(6.00)
+          expect(@primera.select{|etiqueta| etiqueta.get_sal == 4.00}).to eq([@et1])
+          expect(@primera.sort).to eq([@et5,@et4,@et1,@et3,@et2])
+       end
 
   end
 
