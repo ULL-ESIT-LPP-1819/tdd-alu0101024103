@@ -5,10 +5,12 @@ describe Nutricion do
     expect(Nutricion::VERSION).not_to be nil
   end
 end
-=begin
+
   describe Etiqueta do
     before :each do
       @et1=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00)
+      @et2=Etiqueta.new('carne',30.00, 10.00,200.00,70.00,30.00,6.00)
+      @et3=Etiqueta.new('pescado',30.00, 10.00,200.00,70.00,30.00,5.00)
   end
 
       it " Se almacena correctamente el nombre " do
@@ -147,8 +149,38 @@ end
         expect(@et1.to_s).to eq("arroz")
       end
 
+      it "pruebas del < de la etiqueta"do
+      expect(@et1< @et2).to eq(true)
+      end
+
+      it "pruebas del > de la etiqueta "do
+      expect(@et2> @et3).to eq(true)
+      end
+
+      it "pruebas del == de la etiqueta "do
+      expect(@et1 == @et1).to eq(true)
+      end
+
+      it "pruebas del between de la etiqueta"do
+      expect(@et3.between?(@et1,@et2)).to eq(true)
+      end
+
+      it "pruebas del <= de la etiqueta"do
+      expect(@et2 <= @et3).to eq(false)
+      end
+
+      it "pruebas del >= de la etiqueta "do
+      expect(@et1 >= @et2).to eq(false)
+      end
+
+    it "pruebas del <=> de la etiqueta "do
+      expect(@et2 <=> @et1).to eq(1)
+      expect(@et1 <=> @et2).to eq(-1)
+      expect(@et1 <=> @et1).to eq(0)
   end
-=end
+
+  end
+
 
 
   describe Listas do
@@ -161,6 +193,11 @@ end
       @pacienteo4=Sobrepeso.new(1.80,162,20,1,80,40,@array,"Lucas","Rodriguez",76678989,"Dos y cuarto",922624356,"obeso")
       @pacienteo5=Sobrepeso.new(1.87,190,20,1,80,40,@array,"cristian","Perez",768768678,"Dos y cuarto",922624356,"obeso")
 
+      @et1=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00)
+      @et2=Etiqueta.new('carne',30.00, 10.00,200.00,70.00,30.00,6.00)
+      @et3=Etiqueta.new('limon',30.00, 10.00,200.00,70.00,30.00,5.00)
+      @et4=Etiqueta.new('queso',30.00, 10.00,200.00,70.00,30.00,3.00)
+      @et5=Etiqueta.new('pescado',30.00, 10.00,200.00,70.00,30.00,2.00)
     end
 
 
@@ -170,21 +207,25 @@ end
 
         it " prueba del insert para 5 personas y del to_s para 5 comprobar el imc " do
           expect(@primera.insert(@pacienteo2)).to eq(@pacienteo2)
-          expect(@primera.insert(@pacienteo1)).to eq(@pacienteo1)
           expect(@primera.insert(@pacienteo3)).to eq(@pacienteo3)
+          expect(@primera.insert(@pacienteo1)).to eq(@pacienteo1)
           expect(@primera.insert(@pacienteo4)).to eq(@pacienteo4)
           expect(@primera.insert(@pacienteo5)).to eq(@pacienteo5)
           expect(@primera.to_s).to eq('pedro,juan,brian,Lucas,cristian,' )
         end
 
         it "prueba para comprobar el menor imc " do
-          expect(@primera.insert(@pacienteo3)).to eq(@pacienteo3)
+          expect(@primera.insert(@pacienteo4)).to eq(@pacienteo4)
           expect(@primera.insert(@pacienteo2)).to eq(@pacienteo2)
           expect(@primera.insert(@pacienteo1)).to eq(@pacienteo1)
-          expect(@primera.insert(@pacienteo4)).to eq(@pacienteo4)
+          expect(@primera.insert(@pacienteo3)).to eq(@pacienteo3)
           expect(@primera.insert(@pacienteo5)).to eq(@pacienteo5)
           expect(@primera.head[:value]).to eq(@pacienteo1)
+
         end
+
+
+
   end
 
 
@@ -257,7 +298,7 @@ end
         end
 
 
-    
+
         it "prueba de instance_of de un Paciente"do
             expect(@paciente1.instance_of?Sobrepeso).to eq(false)
             expect(@paciente1.instance_of?Paciente).to eq(true)
@@ -276,6 +317,8 @@ end
       describe Sobrepeso do
         before :each do
           @obeso1=Sobrepeso.new(1.60,80,20,1,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso")
+          @obeso2=Sobrepeso.new(1.55,80,20,1,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso")
+          @obeso3=Sobrepeso.new(1.50,80,20,1,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso")
         end
 
         it "prueba para el imc,talla,peso,y edad del paciente"do
@@ -321,4 +364,5 @@ end
         expect(@obeso1.class). to eq (Sobrepeso)
       end
 
-      end
+
+    end

@@ -1,7 +1,8 @@
 Nodo=Struct.new(:value, :get_next, :get_prev)
 
 class Listas
-attr_reader :head
+
+  attr_reader :head
 
   def initialize(head,tail)
       @head,@tail=head,tail
@@ -19,11 +20,11 @@ attr_reader :head
         node_mas=@head
         node_menos=nil
 
-        while node_mas != nil && node_ins[:value].imc()>=node_mas[:value].imc() do
+        while node_mas != nil && node_ins[:value]>=node_mas[:value] do
 
           node_menos=node_mas
           node_mas=node_mas[:get_next]
-          
+
         end
 
         if node_mas == @head
@@ -44,10 +45,8 @@ attr_reader :head
 
       end
       @size+=1;
-    node_ins[:value]
-    end
-
-
+      node_ins[:value]
+  end
 
     def to_s
       ptr=@head
@@ -56,7 +55,6 @@ attr_reader :head
         a <<  ptr [:value].to_s << ','
         ptr=ptr[:get_next]
       end
-
       a
     end
 end

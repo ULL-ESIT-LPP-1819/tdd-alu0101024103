@@ -7,7 +7,7 @@ class Person
   end
   def to_s()
      @nombre
-  end 
+  end
 
 end
 
@@ -27,12 +27,15 @@ end
 
 
 class Sobrepeso<Paciente #herencia
+
   attr_reader :talla,:peso,:edad,:sexo
+
     def initialize(talla,peso,edad,sexo,cintura,cadera,array,nombre,apellidos,dni,horario,telefono,consulta)
       @talla,@peso,@edad,@sexo,@cintura,@cadera,@array=talla,peso,edad,sexo,cintura,cadera,array
       super(nombre,apellidos,dni,horario,telefono,consulta)
-
     end
+
+
 
     def imc()
       @masa = (@peso/(@talla * @talla))
@@ -56,7 +59,4 @@ class Sobrepeso<Paciente #herencia
       return @vector
 
     end
-
-
-
 end
