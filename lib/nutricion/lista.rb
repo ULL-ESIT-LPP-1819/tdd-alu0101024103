@@ -1,12 +1,21 @@
 Nodo=Struct.new(:value, :get_next, :get_prev)
 
 class Listas
-
-  attr_reader :head
+   include Enumerable
+   attr_reader :head
 
   def initialize(head,tail)
       @head,@tail=head,tail
       @size=0
+  end
+
+
+  def each(&block)
+    ptr=@head
+    while ptr != nil do
+      yield (ptr[:value])
+      ptr=ptr[:get_next]
+    end
   end
 
 
@@ -20,7 +29,7 @@ class Listas
         node_mas=@head
         node_menos=nil
 
-        while node_mas != nil && node_ins[:value].imc()>=node_mas[:value].imc() do
+        while node_mas != nil && node_ins[:value]>=node_mas[:value] do
 
           node_menos=node_mas
           node_mas=node_mas[:get_next]
