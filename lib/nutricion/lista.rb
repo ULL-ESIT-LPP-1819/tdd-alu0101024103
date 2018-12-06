@@ -1,5 +1,6 @@
 Nodo=Struct.new(:value, :get_next, :get_prev)
 
+#Clase de una lista que contiene el metodo insertar, el to_s,  yel each
 class Listas
    include Enumerable
    attr_reader :head
@@ -9,7 +10,7 @@ class Listas
       @size=0
   end
 
-
+#necesario para el modulo enumerable
   def each(&block)
     ptr=@head
     while ptr != nil do
@@ -18,7 +19,7 @@ class Listas
     end
   end
 
-
+#inserta los elementos entre el nodo mas y el nodo menos
   def insert(other)
     if @size==0
       node_ins=Nodo.new(other,nil,nil)
@@ -57,6 +58,7 @@ class Listas
       node_ins[:value]
   end
 
+     #Puntero que muestra un string con el resultado.
     def to_s
       ptr=@head
       a = String.new

@@ -1,5 +1,5 @@
 
-
+#clase con los valores nutricionales de una etiqueta, asi como las kcal en kj y kcal
 class Etiqueta
 include Comparable
 

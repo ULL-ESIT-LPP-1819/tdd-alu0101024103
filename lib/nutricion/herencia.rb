@@ -12,8 +12,8 @@ class Person
 end
 
 
-
-class Paciente<Person #herencia
+ #herencia
+class Paciente<Person
 
 
   attr_reader :horario,:telefono,:consulta
@@ -26,8 +26,8 @@ class Paciente<Person #herencia
 end
 
 
-
-class Sobrepeso<Paciente #herencia
+ #herencia, contiene los metodos nutricionales y el modulo comparable
+class Sobrepeso<Paciente
   include Comparable
   attr_reader :talla,:peso,:edad,:sexo
 
@@ -35,11 +35,11 @@ class Sobrepeso<Paciente #herencia
       @talla,@peso,@edad,@sexo,@cintura,@cadera,@array=talla,peso,edad,sexo,cintura,cadera,array
       super(nombre,apellidos,dni,horario,telefono,consulta)
     end
-
+#necesario para el modulo comparable
     def <=> (anOther)
         imc()<=> anOther.imc()
     end
-  
+
     def imc()
       @masa = (@peso/(@talla * @talla))
     end
