@@ -354,6 +354,12 @@ end
           @et4=Etiqueta.new('queso',30.00, 10.00,200.00,70.00,30.00,3.00)
           @et5=Etiqueta.new('pescado',30.00, 10.00,200.00,70.00,30.00,2.00)
 
+          @menu1=Listas.new(nil,nil)
+          @menu2=Listas.new(nil,nil)
+          @menu3=Listas.new(nil,nil)
+          @menu4=Listas.new(nil,nil)
+          @menu5=Listas.new(nil,nil)
+
 
 
         end
