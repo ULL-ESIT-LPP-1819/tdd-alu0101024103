@@ -354,11 +354,7 @@ end
           @et4=Etiqueta.new('queso',30.00, 10.00,200.00,70.00,30.00,3.00)
           @et5=Etiqueta.new('pescado',30.00, 10.00,200.00,70.00,30.00,2.00)
 
-          @menu1=Listas.new(nil,nil)
-          @menu2=Listas.new(nil,nil)
-          @menu3=Listas.new(nil,nil)
-          @menu4=Listas.new(nil,nil)
-          @menu5=Listas.new(nil,nil)
+
 
         end
 
@@ -455,99 +451,4 @@ end
         expect(@menu1.reduce(0) {|sum,n| (sum + n.get_sal())}).to eq(8.0)
       end
 
-      it "menu 1 paciente 1"do
-        expect(@menu1.insert(@et3)).to eq(@et3)
-        expect(@menu1.insert(@et4)).to eq(@et4)
-        expect(@menu1.insert(@et5)).to eq(@et5)
-
-      		expect(@menu1.get_value.get_val_en_kcal()).to eq(1202.0)
-      		expect(@menu1.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) } ).to eq(3630.0)
-      		expect((@obeso1.gasto_energetico_total()).round(2)).to eq(786.5)
-
-          #10% de margen de error
-      		total= (@obeso1.gasto_energetico_total())
-      		kcal_menu1 = @menu1.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) }
-      		ab=(kcal_menu1*0.9).round(2)
-      		ar=(kcal_menu1*1.1).round(2)
-
-      	  expect(total.between?(ab,ar)).to eq(false)
-
-      end
-
-      it "menu 2 paciente 2"do
-        expect(@menu2.insert(@et1)).to eq(@et1)
-        expect(@menu2.insert(@et2)).to eq(@et2)
-        expect(@menu2.insert(@et3)).to eq(@et3)
-
-      		expect(@menu2.get_value.get_val_en_kcal()).to eq(1214.0)
-      		expect(@menu2.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) } ).to eq(3660.0)
-      		expect((@obeso2.gasto_energetico_total()).round(2)).to eq(1172.09)
-
-          #10% de margen de error
-      		total= (@obeso2.gasto_energetico_total())
-      		kcal_menu2 = @menu2.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) }
-      		ab=(kcal_menu2*0.9).round(2)
-      		ar=(kcal_menu2*1.1).round(2)
-
-      	  expect(total.between?(ab,ar)).to eq(false)
-
-      end
-
-      it "menu 3 paciente 3"do
-        expect(@menu3.insert(@et1)).to eq(@et1)
-        expect(@menu3.insert(@et3)).to eq(@et3)
-        expect(@menu3.insert(@et5)).to eq(@et5)
-
-      		expect(@menu3.get_value.get_val_en_kcal()).to eq(1202.0)
-      		expect(@menu3.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) } ).to eq(3636.0)
-      		expect((@obeso3.gasto_energetico_total()).round(2)).to eq(978.69)
-
-          #10% de margen de error
-      		total= (@obeso3.gasto_energetico_total())
-      		kcal_menu3 = @menu3.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) }
-      		ab=(kcal_menu3*0.9).round(2)
-      		ar=(kcal_menu3*1.1).round(2)
-
-      	  expect(total.between?(ab,ar)).to eq(false)
-
-      end
-
-      it "menu 5 paciente 5"do
-        expect(@menu4.insert(@et2)).to eq(@et2)
-        expect(@menu4.insert(@et4)).to eq(@et4)
-        expect(@menu4.insert(@et5)).to eq(@et5)
-
-          expect(@menu4.get_value.get_val_en_kcal()).to eq(1202.0)
-          expect(@menu4.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) } ).to eq(3636.0)
-          expect((@obeso4.gasto_energetico_total()).round(2)).to eq(1998.36)
-
-          #10% de margen de error
-          total= (@obeso4.gasto_energetico_total())
-          kcal_menu4 = @menu4.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) }
-          ab=(kcal_menu4*0.9).round(2)
-          ar=(kcal_menu4*1.1).round(2)
-
-          expect(total.between?(ab,ar)).to eq(false)
-
-      end
-
-
-      it "menu 5 paciente 5"do
-        expect(@menu5.insert(@et1)).to eq(@et1)
-        expect(@menu5.insert(@et2)).to eq(@et2)
-        expect(@menu5.insert(@et4)).to eq(@et4)
-
-      		expect(@menu5.get_value.get_val_en_kcal()).to eq(1208.0)
-      		expect(@menu5.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) } ).to eq(3648.0)
-      		expect((@obeso5.gasto_energetico_total()).round(2)).to eq(340.38)
-
-          #10% de margen de error
-      		total= (@obeso5.gasto_energetico_total())
-      		kcal_menu5 = @menu5.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) }
-      		ab=(kcal_menu5*0.9).round(2)
-      		ar=(kcal_menu5*1.1).round(2)
-
-      	  expect(total.between?(ab,ar)).to eq(false)
-
-      end
     end
