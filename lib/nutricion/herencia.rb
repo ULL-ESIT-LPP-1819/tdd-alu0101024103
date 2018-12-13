@@ -31,8 +31,8 @@ class Sobrepeso<Paciente
   include Comparable
   attr_reader :talla,:peso,:edad,:sexo
 
-    def initialize(talla,peso,edad,sexo,cintura,cadera,array,nombre,apellidos,dni,horario,telefono,consulta)
-      @talla,@peso,@edad,@sexo,@cintura,@cadera,@array=talla,peso,edad,sexo,cintura,cadera,array
+    def initialize(talla,peso,edad,sexo,cintura,cadera,array,nombre,apellidos,dni,horario,telefono,consulta,actividad)
+      @talla,@peso,@edad,@sexo,@cintura,@cadera,@array,@actividad=talla,peso,edad,sexo,cintura,cadera,array,actividad
       super(nombre,apellidos,dni,horario,telefono,consulta)
     end
 #necesario para el modulo comparable
@@ -60,6 +60,6 @@ class Sobrepeso<Paciente
       @vector[2]=(@array[2][0]+@array[2][1]+@array[2][2])/3
       @vector[3]=(@array[3][0]+@array[3][1]+@array[3][2])/3
       return @vector
-
     end
+
 end

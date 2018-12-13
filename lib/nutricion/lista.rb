@@ -58,6 +58,10 @@ class Listas
       node_ins[:value]
   end
 
+  def get_value
+		@head[:value]
+	end
+
      #Puntero que muestra un string con el resultado.
     def to_s
       ptr=@head
