@@ -466,7 +466,7 @@ end
           expect(@menu1.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) } ).to eq(3630.0)
           expect((@obeso1.gasto_energetico_total()).round(2)).to eq(786.5)
 
-          #10% de margen 
+          #10% de margen
           total= (@obeso1.gasto_energetico_total())
           kcal_menu1 = @menu1.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) }
           ab=(kcal_menu1*0.9).round(2)
@@ -478,11 +478,10 @@ end
 
       it "menu 2 paciente 2"do
         expect(@menu2.insert(@et1)).to eq(@et1)
-        expect(@menu2.insert(@et2)).to eq(@et2)
-        expect(@menu2.insert(@et3)).to eq(@et3)
+
 
           expect(@menu2.get_value.get_val_en_kcal()).to eq(1214.0)
-          expect(@menu2.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) } ).to eq(3660.0)
+          expect(@menu2.reduce(0) {|sum, num| (sum + num.get_val_en_kcal()).round(2) } ).to eq(1214.0)
           expect((@obeso2.gasto_energetico_total()).round(2)).to eq(1172.09)
 
           #10% de margen
@@ -491,7 +490,7 @@ end
           ab=(kcal_menu2*0.9).round(2)
           ar=(kcal_menu2*1.1).round(2)
 
-          expect(total.between?(ab,ar)).to eq(false)
+          expect(total.between?(ab,ar)).to eq(true)
 
       end
 

@@ -62,4 +62,44 @@ class Sobrepeso<Paciente
       return @vector
     end
 
+    def peso_teorico_ideal()
+      return  ((@talla - 150.0) * 0.75 + 50.0)
+    end
+
+    def gasto_energetico_basal ()
+
+      if (@sexo == 0)
+      (( 10 * @peso) + (6.25 * @talla) - (5 * @edad) - 161)
+    else
+      ((10 * @peso) + (6.25 * @talla) - (5 * @edad) + 5)
+    end
+    end
+
+    def efecto_termogeno()
+      ( gasto_energetico_basal() * 0.10)
+      end
+
+    def gasto_actividad_fisica()
+
+      if (@actividad == "reposo")
+        @factor_actividad_fisica = 0.0
+      end
+      if  (@actividad == "actividad ligera")
+        @factor_actividad_fisica= 0.12
+      end
+      if (@actividad == "actividad moderada")
+        @factor_actividad_fisica= 0.27
+      end
+      if (@actividad == "actividad ligera")
+        @factor_actividad_fisica= 0.54
+      end
+        (gasto_energetico_basal() * @factor_actividad_fisica)
+    end
+
+
+    def gasto_energetico_total()
+        (gasto_energetico_basal + efecto_termogeno() + gasto_actividad_fisica())
+    end
+
+
 end
