@@ -594,6 +594,8 @@ end
       it "Array del  menú usando for " do
           expect(@menuprin.ord_for_array).to eq([2410.0, 2416.0, 2422.0, 2422.0, 2428.0, 2428.0, 2434.0, 2434.0, 2440.0, 2446.0])
       end
-    
+      it "Array del menú usando each " do
+        expect(@menuprin.ord_each_array).to eq([2410.0, 2416.0, 2422.0, 2422.0, 2428.0, 2428.0, 2434.0, 2434.0, 2440.0, 2446.0])
+      end
 
     end
