@@ -3,7 +3,7 @@ require "nutricion/codigo"
 require "nutricion/lista"
 require "nutricion/herencia"
 require "nutricion/vectorcito.rb"
-
+require "benchmark"
 
 
 
