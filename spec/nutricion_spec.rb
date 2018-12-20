@@ -602,4 +602,9 @@ end
         expect(@menuprin.sort).to eq([2410.0, 2416.0, 2422.0, 2422.0, 2428.0, 2428.0, 2434.0, 2434.0, 2440.0, 2446.0])
       end
 
+
+          it "Lista de los pacientes usando for " do
+              expect(@l_personas.ord_for_lista).to eq([@obeso5,@obeso10,@obeso1,@obeso6,@obeso3,@obeso8,@obeso2,@obeso7,@obeso4,@obeso9])
+          end
+
     end
