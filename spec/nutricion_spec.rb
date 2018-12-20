@@ -616,4 +616,21 @@ end
           end
 
 
+          it "Benchmark del menu (vector) " do
+            n=5000
+              Benchmark.bm do |x|
+              x.report("bucle for"){ n.times{@menuprin.ord_for_array}}
+              x.report("bucle each"){ n.times{@menuprin.ord_each_array}}
+              x.report("bucle sort"){ n.times{@menuprin.sort}}
+              end
+          end
+          it "Benchmark de la lista(lista_doblemente_enlazada) " do
+            n=5000
+              Benchmark.bm do |x|
+              x.report("bucle for"){ n.times{@l_personas.ord_for_lista}}
+              x.report("bucle each"){ n.times{@l_personas.ord_each_lista}}
+              x.report("bucle sort"){ n.times{@l_personas.sort}}
+              end
+          end
+
     end
