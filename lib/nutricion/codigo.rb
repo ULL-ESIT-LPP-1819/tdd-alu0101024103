@@ -9,7 +9,7 @@ include Comparable
   end
 
   def <=>(anOther)
-    get_sal()<=> anOther.get_sal()
+    get_val_en_kcal()<=> anOther.get_val_en_kcal()
   end
 
   def get_nombre()

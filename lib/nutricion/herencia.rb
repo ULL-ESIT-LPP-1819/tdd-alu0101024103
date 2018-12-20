@@ -37,7 +37,7 @@ class Sobrepeso<Paciente
     end
 #necesario para el modulo comparable
     def <=> (anOther)
-        imc()<=> anOther.imc()
+        gasto_energetico_total()<=>anOther.gasto_energetico_total()
     end
 
     def imc()

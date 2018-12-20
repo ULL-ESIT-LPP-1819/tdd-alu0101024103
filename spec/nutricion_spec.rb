@@ -199,7 +199,7 @@ end
       @et4=Etiqueta.new('queso',30.00, 10.00,200.00,70.00,30.00,3.00)
       @et5=Etiqueta.new('pescado',30.00, 10.00,200.00,70.00,30.00,2.00)
     end
-
+=begin
         it "prueba de insertar una sola persona " do
           expect(@primera.insert(@et2)).to eq(@et2)
         end
@@ -210,7 +210,7 @@ end
           expect(@primera.insert(@pacienteo1)).to eq(@pacienteo1)
           expect(@primera.insert(@pacienteo4)).to eq(@pacienteo4)
           expect(@primera.insert(@pacienteo5)).to eq(@pacienteo5)
-          expect(@primera.to_s).to eq('pedro,juan,brian,Lucas,cristian,' )
+          expect(@primera.to_s).to eq("pedro,juan,Lucas,brian,cristian," )
         end
 
         it "prueba para comprobar el menor imc " do
@@ -235,7 +235,7 @@ end
           expect(@primera.min.imc()).to eq(31.249999999999993)
           expect(@primera.max.imc()).to eq(54.333838542709245)
           expect(@primera.select{|persona| persona.imc == 31.249999999999993}).to eq([@pacienteo1])
-          expect(@primera.sort).to eq([@pacienteo1,@pacienteo2,@pacienteo3,@pacienteo4,@pacienteo5])
+          expect(@primera.sort).to eq([@pacienteo1,@pacienteo2,@pacienteo4,@pacienteo3,@pacienteo5])
        end
 
         it "pruebas para el collect,select,sort,max,min de etiquetas"do
@@ -251,7 +251,7 @@ end
           expect(@primera.select{|etiqueta| etiqueta.get_sal == 4.00}).to eq([@et1])
           expect(@primera.sort).to eq([@et5,@et4,@et1,@et3,@et2])
        end
-
+=end
   end
 
 
@@ -342,11 +342,16 @@ end
 
       describe Sobrepeso do
         before :each do
-          @obeso1=Sobrepeso.new(1.60,80,20,1,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso", "reposo")
-          @obeso2=Sobrepeso.new(1.55,80,20,1,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso","actividad ligera")
-          @obeso3=Sobrepeso.new(1.50,80,20,1,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso","actividad moderada")
-        @obeso4=Sobrepeso.new(1.87,190,20,1,80,40,@array,"cristian","Perez",768768678,"Dos y cuarto",922624356,"obeso","reposo")
-          @obeso5=Sobrepeso.new(1.67,56,20,0,80,40,@array,"pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso","reposo")
+          @obeso1=Sobrepeso.new(1.60,80,20,1,80,40,@array,"aba","Marquez",87987879,"Dos y cuarto",922624356,"obeso", "reposo")
+          @obeso2=Sobrepeso.new(1.55,80,20,1,80,40,@array,"bizzi","Marquez",87987879,"Dos y cuarto",922624356,"obeso","actividad ligera")
+          @obeso3=Sobrepeso.new(1.50,80,20,1,80,40,@array,"catherine","Marquez",87987879,"Dos y cuarto",922624356,"obeso","actividad moderada")
+          @obeso4=Sobrepeso.new(1.87,190,20,1,80,40,@array,"damion","Perez",768768678,"Dos y cuarto",922624356,"obeso","reposo")
+          @obeso5=Sobrepeso.new(1.67,56,20,0,80,40,@array,"eustaquio","Marquez",87987879,"Dos y cuarto",922624356,"obeso","reposo")
+          @obeso6=Sobrepeso.new(1.60,80,20,1,80,40,@array,"fapo","Marquez",87987879,"Dos y cuarto",922624356,"obeso", "reposo")
+          @obeso7=Sobrepeso.new(1.55,80,20,1,80,40,@array,"gio","Marquez",87987879,"Dos y cuarto",922624356,"obeso","actividad ligera")
+          @obeso8=Sobrepeso.new(1.50,80,20,1,80,40,@array,"helen","Marquez",87987879,"Dos y cuarto",922624356,"obeso","actividad moderada")
+          @obeso9=Sobrepeso.new(1.87,190,20,1,80,40,@array,"isora","Perez",768768678,"Dos y cuarto",922624356,"obeso","reposo")
+          @obeso10=Sobrepeso.new(1.67,56,20,0,80,40,@array,"juan","Marquez",87987879,"Dos y cuarto",922624356,"obeso","reposo")
 
           @et1=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00)
           @et2=Etiqueta.new('carne',30.00, 10.00,200.00,70.00,30.00,6.00)
@@ -362,8 +367,39 @@ end
 
 
 
-        end
 
+
+          @men1 = [@et1, @et2].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men2 =[@et3, @et4].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men3 =[@et1, @et3].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men4 =[@et1, @et4].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men5 =[@et2, @et3].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men6=[@et2, @et4].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men7=[@et1, @et5].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men8 =[@et3, @et5].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men9 =[@et4, @et5].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+          @men10 =[@et5, @et2].reduce(0) {|suma, x| (suma + x.get_val_en_kcal())}
+
+            @menuprin = [@men1,@men2,@men3,@men4,@men5,@men6,@men7,@men8,@men9,@men10]
+
+
+          @l_personas = Listas.new(nil,nil)
+          @l_personas.insert(@obeso1)
+          @l_personas.insert(@obeso2)
+          @l_personas.insert(@obeso3)
+          @l_personas.insert(@obeso4)
+          @l_personas.insert(@obeso5)
+          @l_personas.insert(@obeso6)
+          @l_personas.insert(@obeso7)
+          @l_personas.insert(@obeso8)
+          @l_personas.insert(@obeso9)
+          @l_personas.insert(@obeso10)
+
+
+
+
+        end
+=begin
         it "prueba para el imc,talla,peso,y edad del paciente"do
         expect(@obeso1.talla).to eq(1.60)
         expect(@obeso1.peso).to eq(80)
@@ -371,6 +407,8 @@ end
         expect(@obeso1.sexo).to eq(1)
         expect(@obeso1.imc). to eq(31.249999999999993)
       end
+
+=end
 
       it "prueba de is_a y kind_of de un obeso"do
           expect(@obeso1.is_a?Sobrepeso).to eq(true)
@@ -420,7 +458,7 @@ end
       end
 
       it "pruebas del between de la información nutricional"do
-      expect(@obeso2.between?(@obeso1,@obeso3)).to eq(true)
+      expect(@obeso2.between?(@obeso1,@obeso3)).to eq(false)
       end
 
       it "pruebas del <= de la información nutricional"do
@@ -440,6 +478,7 @@ end
       it "collect" do
         expect(@menu1.insert(@et1)).to eq(@et1)
         expect(@menu1.insert(@et2)).to eq(@et2)
+
         expect(@menu1.map{|i| i.get_sal()}).to eq([4.0,6.0])
         expect(@menu1.collect{|i| i.get_sal()}).to eq([4.0,6.0])
       end
@@ -551,5 +590,10 @@ end
           expect(total.between?(ab,ar)).to eq(false)
 
       end
+
+      it "Array del  menú usando for " do
+          expect(@menuprin.ord_for_array).to eq([2410.0, 2416.0, 2422.0, 2422.0, 2428.0, 2428.0, 2434.0, 2434.0, 2440.0, 2446.0])
+      end
+    
 
     end
