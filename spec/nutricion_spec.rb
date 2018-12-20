@@ -611,4 +611,9 @@ end
             expect(@l_personas.ord_each_lista).to eq([@obeso5,@obeso10,@obeso1,@obeso6,@obeso3,@obeso8,@obeso2,@obeso7,@obeso4,@obeso9])
           end
 
+          it "Lista de los pacientes usando sort " do
+            expect(@l_personas.sort).to eq([@obeso5,@obeso10,@obeso1,@obeso6,@obeso3,@obeso8,@obeso2,@obeso7,@obeso4,@obeso9])
+          end
+
+
     end
