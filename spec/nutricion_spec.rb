@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Nutricion do
+RSpec.describe Nutricion do
   it 'has a version number' do
     expect(Nutricion::VERSION).not_to be nil
   end
 end
 
-  describe Etiqueta do
+  RSpec.describe Etiqueta do
     before :each do
       @et1=Etiqueta.new('arroz',30.00, 10.00,200.00,70.00,30.00,4.00)
       @et2=Etiqueta.new('carne',30.00, 10.00,200.00,70.00,30.00,6.00)
@@ -183,7 +183,7 @@ end
 
 
 
-  describe Listas do
+  RSpec.describe Listas do
     before :each do
       @primera = Listas.new(nil,nil)
       @array=Array[[1,2,3],[1,2,3],[1,2,3],[1,2,3]]
@@ -255,7 +255,7 @@ end
   end
 
 
-    describe Person do
+    RSpec.describe Person do
       before :each do
     @persona1=Person.new("pedro","Marquez",87987879)
       end
@@ -299,7 +299,7 @@ end
 
       end
 
-      describe Paciente do
+      RSpec.describe Paciente do
         before :each do
       @paciente1=Paciente.new("pedro","Marquez",87987879,"Dos y cuarto",922624356,"obeso")
         end
@@ -340,7 +340,7 @@ end
       end
 
 
-      describe Sobrepeso do
+      RSpec.describe Sobrepeso do
         before :each do
           @obeso1=Sobrepeso.new(1.60,80,20,1,80,40,@array,"aba","Marquez",87987879,"Dos y cuarto",922624356,"obeso", "reposo")
           @obeso2=Sobrepeso.new(1.55,80,20,1,80,40,@array,"bizzi","Marquez",87987879,"Dos y cuarto",922624356,"obeso","actividad ligera")
