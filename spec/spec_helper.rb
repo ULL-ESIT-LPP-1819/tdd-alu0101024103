@@ -1,8 +1,22 @@
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'coveralls'
+
+module Coveralls
+  def should_run?
+    true
+  end
+
+  def will_run?
+    true
+  end
+end if ENV['CI']
+
+Coveralls.wear!
+
+
+
+#$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require "bundler/setup"
 require 'nutricion'
-require 'coveralls'
-Coveralls.wear!
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
